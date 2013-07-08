@@ -1,10 +1,18 @@
 var express = require('express');
+var fs = require("fs");
 
 var app = express.createServer(express.logger());
 
-app.get('/', function(request, response) {
-  response.send('Hello World 2x!');
+var fileName = "index.html";
+fs.readFile(fileName, 'utf8', function(error, data){
+
+//error handling later
+ 
+  app.get('/', function(request, response) {
+    response.send(data); //was 'Hello World 2!' and not in fs.readfile
+  });
 });
+
 
 var port = process.env.PORT || 5000;
 app.listen(port, function() {

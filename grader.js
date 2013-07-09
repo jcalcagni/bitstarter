@@ -91,7 +91,7 @@ if(require.main == module) {
     console.log(outJson);
     }
 	else {
-	DEFAULT_CHECK = programs.checks;
+	DEFAULT_CHECK = program.checks;
 	rest.get(DEFAULT_URL).on('complete', send2console);
 	}
 } else {

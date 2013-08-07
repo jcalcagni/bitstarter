@@ -14,7 +14,7 @@ fs.readFile(fileName, 'utf8', function(error, data){
 });
 
 
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 8080;  //was 5000
 app.listen(port, function() {
   console.log("Listening on " + port);
 });
